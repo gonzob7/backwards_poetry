@@ -1,16 +1,24 @@
-poem = """
-this is poem
-line 1
-line2
-"""
+poem = """If you are a dreamer, come in,
+If you are a dreamer, a wisher, a liar,
+A hope-er, a pray-er, a magic bean buyer…
+If you’re a pretender, come sit by my fire
+For we have some flax-golden tales to spin.
+Come in!
+Come in!"""
 
 lines = poem.split("\n")
 
-print(lines)
+def number_lines(poem):
+    for line in enumerate(poem,1):
+        print(line)
 
 def lines_printed_backwards(poem):
-    new_poem = poem[::-1]
-    return new_poem
+    for line_num, line in reversed(list(enumerate(lines,1))):
+        print(line_num, line)
 
+    # new_poem = poem[::-1]
+    # for line in new_poem:
+    #     print(line)
 
-print(lines_printed_backwards(lines))
+# number_lines(lines)
+lines_printed_backwards(lines)
