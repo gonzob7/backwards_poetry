@@ -12,27 +12,31 @@ Come in!"""
 my_poem = poem.split("\n")
 
 #Custom Function (normal numbered lines)
-def number_lines(poem):
-    for line in enumerate(poem,1):
-        print(line)
+def lines_printed_normal(poem):
+    print("NORMAL LINES: ")
+    for line_num, line in list(enumerate(poem,1)):
+        print(line_num, line)
+    print("")
 
 #Lines printed backwards function, uses enumerate method and starts counting at 1.
 def lines_printed_backwards(poem):
+    print("LINES BACKWARDS: ")
     for line_num, line in reversed(list(enumerate(my_poem,1))):
         print(line_num, line)
+    print("")
 
 #Lines printed at random function, uses random index but does not check for duplicates.
 def lines_printed_random(poem):
+    print("LINES RANDOM: ")
     random_lines = []
     for line in poem:
         random_index = random.randint(0, len(poem)-1)
         random_lines.append(poem[random_index])
-
     for line in random_lines:
         print(line)
-
+    print("")
 
 #Function Calls
+lines_printed_normal(my_poem)
 lines_printed_backwards(my_poem)
-print("")
 lines_printed_random(my_poem)
